@@ -1,0 +1,100 @@
+body {
+  font: 16px "Lucida Grande", Helvetica, Arial, sans-serif;
+  color: white;
+  background: linear-gradient(245.59deg,rgb(120, 201, 244)  0% , rgb(27, 27, 79) 80% ,rgb(19, 19, 57) 100%);
+}
+.main{
+  /* display: grid;
+  grid-template-columns: repeat(2, 1fr); */
+  align-items: center;
+  margin-top: 20%;
+}
+.clubbtn {
+  font-size: 30px;
+  padding: 1rem 3rem;
+  margin-top: 2rem;
+}
+.homePageSection {
+  padding: 0 19%;
+}
+.mynav {
+  padding: 25px 10%;
+}
+.navlist{
+  text-align: end;
+}
+.nav-item{
+  margin-right: 50px;
+  border-bottom: 2px solid transparent;
+  transition: all .55s;
+}
+.nav-item:hover{
+  border-bottom: 2px solid white;
+}
+
+/* ----------------------------------footer ----------------------------------   */
+
+footer {
+  margin-top: 10%;
+  position: relative;
+  bottom: 0;
+  width: 100%;
+}
+.myfooter {
+
+  text-align: center;
+}
+.footerlogo {
+  width: 50px;
+  height: 20px;
+}
+
+/* ---------------------------------------------------------------------   */
+/* ----------------------------------show ----------------------------------   */
+
+.bigtext {
+  font-size: 2rem;
+  padding: 10px 0 10px 0;
+}
+.formlogin {
+  background-color: rgb(237, 237, 237);
+  margin-top: 10rem;
+  padding: 5rem;
+  width: 400px;
+}
+.LoginRegisbtn {
+  margin-top: 2rem;
+}
+.LoginRegisimg {
+  margin-bottom: 2rem;
+}
+.clublabel {
+  margin-top: 1rem;
+}
+.mainClubPage {
+  margin: 10rem 15rem 10rem 15rem;
+}
+.football:hover {
+  content: url(/images/soccer-player1.png);
+}
+.swim:hover {
+  content: url(/images/swimmer1.png);
+}
+.pingpong:hover {
+  content: url(/images/ping-pong1.png);
+}
+
+/* --------------------------------------------------------------------   */
+/* ---------------------------------- show info student & teacher ----------------------------------   */
+
+.clubAddBtn {
+  margin-bottom: 2rem;
+}
+.clubtable {
+  margin-top: 10rem;
+}
+.studentTable {
+  margin-top: 3rem;
+}
+
+/* --------------------------------------------------------------------------------- */
