@@ -74,14 +74,27 @@ footer {
 .mainClubPage {
   margin: 10rem 15rem 10rem 15rem;
 }
+
+/* --------------------------------------------------------------------   */
+/* ---------------------------------- images in club page ----------------------------------   */
+
 .football:hover {
-  content: url(/images/soccer-player1.png);
-}
-.swim:hover {
-  content: url(/images/swimmer1.png);
+  content: url(/images/football1.png);
 }
 .pingpong:hover {
   content: url(/images/ping-pong1.png);
+}
+.basketball:hover {
+  content: url(/images/basketball-ball1.png);
+}
+.english:hover {
+  content: url(/images/united-kingdom1.png);
+}
+.japan:hover {
+  content: url(/images/japan1.png);
+}
+.korea:hover {
+  content: url(/images/south-korea1.png);
 }
 
 /* --------------------------------------------------------------------   */
@@ -97,4 +110,8 @@ footer {
   margin-top: 3rem;
 }
 
-/* --------------------------------------------------------------------------------- */
+/* ----------------------------------- allClubPage ---------------------------------------------- */
+
+.textForTopicClub {
+  font-size: 24px;
+}

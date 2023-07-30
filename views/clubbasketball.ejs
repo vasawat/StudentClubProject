@@ -3,14 +3,14 @@
 <section class="clubSection">
 <div class="clubtable">
 <center>
-  <% let alluser = football.length; let allteacher = (footballTeacher.length)*5; %> 
+  <% let alluser = basketball.length; let allteacher = (basketballTeacher.length)*5; %> 
   <% if (alluser >= allteacher) { %>
-  <p class="textForTopicClub">ชมรมฟุตบอล</p>
-  <p class="btn btn-secondary btn-lg">ชมรมฟุตบอลเต็มเเล้ว</p>
+  <p class="textForTopicClub">ชมรมบาสเกตบอล</p>
+  <p class="btn btn-secondary btn-lg">ชมรมบาสเกตบอลเต็มเเล้ว</p>
   <p>นักเรียนในชมรม <%= alluser %> คน เต็ม <%= allteacher %> คน</p>
   <% } %>
   <% if (alluser < allteacher) { %>
-    <p class="textForTopicClub">ชมรมฟุตบอล</p>
+    <p class="textForTopicClub">ชมรมบาสเกตบอล</p>
     <p>นักเรียนในชมรม <%= alluser %> คน เต็ม <%= allteacher %> คน</p>
     <button type="button" class="btn btn-primary clubAddBtn" data-bs-toggle="modal" data-bs-target="#addInfoModal">
       สมัครเข้าชมรมนี้
@@ -40,17 +40,17 @@
       </tr>
     </thead>
     <tbody>
-      <% for (let i = 0; i < footballTeacher.length; i++) { %>    
+      <% for (let i = 0; i < basketballTeacher.length; i++) { %>    
         <% let number = i+1; %>
           <tr>
             <td>
-              ครู <%= footballTeacher[i].teacherName %>  
+              ครู <%= basketballTeacher[i].teacherName %>  
             </td>
             <td>
-              <%= footballTeacher[i].teacherId %> 
+              <%= basketballTeacher[i].teacherId %> 
             </td>
             <td>
-              <%= footballTeacher[i].clubType %>  
+              <%= basketballTeacher[i].clubType %>  
             </td>
             <td class="d-flex gap-2">
               <form action="/edit/teacher" method="post">
@@ -68,13 +68,13 @@
           </div>
           <div class="modal-body">
   
-          <input type="hidden" name="sendidtoedit" value="<%= footballTeacher[i]._id %>">
+          <input type="hidden" name="sendidtoedit" value="<%= basketballTeacher[i]._id %>">
   
             <label for="studentName" class="text-dark clublabel">ชื่อ-นามสกุล:</label>
-            <input type="text" class="form-control" name="teacherName" value="<%= footballTeacher[i].teacherName%>">
+            <input type="text" class="form-control" name="teacherName" value="<%= basketballTeacher[i].teacherName%>">
   
             <label for="studentId" class="text-dark clublabel">รหัสครู:</label>
-            <input type="text" class="form-control" name="teacherId" value="<%= footballTeacher[i].teacherId  %> ">
+            <input type="text" class="form-control" name="teacherId" value="<%= basketballTeacher[i].teacherId  %> ">
   
             <label for="clubType" class="text-dark clublabel">เลือกชมรม: <label class="text-danger" for="">*เลือกชมรมให้ถูกต้อง</label></label>
             <select class="form-select" name="clubType" >
@@ -98,7 +98,7 @@
 
         </form>
         <form action="/delete/teacher" method="post">
-        <input type="hidden" name="sendid" value="<%= footballTeacher[i]._id %>">
+        <input type="hidden" name="sendid" value="<%= basketballTeacher[i]._id %>">
         <button type="submit" class="btn btn-danger">Delete</button>
         </form>
         </td>
@@ -135,23 +135,23 @@
         </tr>
        </thead>
        <tbody>
-    <% for (let i = 0; i < football.length; i++) { %>     
+    <% for (let i = 0; i < basketball.length; i++) { %>     
       <% let number = i+1; %>
       <tr>
         <td>
           <%= number %>
         </td>
           <td>
-            <%= football[i].studentName %>  
+            <%= basketball[i].studentName %>  
           </td>
           <td>
-            <%= football[i].studentId %> 
+            <%= basketball[i].studentId %> 
           </td>
           <td>
-            <%= football[i].studentNumber %> 
+            <%= basketball[i].studentNumber %> 
           </td>
           <td>
-            <%= football[i].clubType %>  
+            <%= basketball[i].clubType %>  
           </td>
           <td class="d-flex gap-2">
             <form action="/edit/student" method="post">
@@ -168,16 +168,16 @@
         </div>
         <div class="modal-body">
 
-        <input type="hidden" name="sendidtoedit" value="<%= football[i]._id %>">
+        <input type="hidden" name="sendidtoedit" value="<%= basketball[i]._id %>">
 
           <label for="studentName" class="text-dark clublabel">ชื่อ-นามสกุล:</label>
-          <input type="text" class="form-control" name="studentName" value="<%= football[i].studentName%>">
+          <input type="text" class="form-control" name="studentName" value="<%= basketball[i].studentName%>">
 
           <label for="studentId" class="text-dark clublabel">รหัสนักเรียน:</label>
-          <input type="text" class="form-control" name="studentId" value="<%= football[i].studentId  %> ">
+          <input type="text" class="form-control" name="studentId" value="<%= basketball[i].studentId  %> ">
 
           <label for="studentNumber" class="text-dark clublabel">เลขที่นักเรียน:</label>
-          <input type="text" class="form-control" name="studentNumber" value="<%= football[i].studentNumber  %>">
+          <input type="text" class="form-control" name="studentNumber" value="<%= basketball[i].studentNumber  %>">
 
           <label for="clubType" class="text-dark clublabel">เลือกชมรม: <label class="text-danger" for="">*เลือกชมรมให้ถูกต้อง</label></label>
           <select class="form-select" name="clubType" >
@@ -212,7 +212,7 @@
 
   </form>
   <form action="/delete/student" method="post">
-    <input type="hidden" name="sendid" value="<%= football[i]._id %>">
+    <input type="hidden" name="sendid" value="<%= basketball[i]._id %>">
     <button type="submit" class="btn btn-danger">Delete</button>
   </form>
   </td>
@@ -248,20 +248,20 @@
           </tr>
         </thead>
         <tbody>
-          <% for (let i = 0; i < footballTeacher.length; i++) { %>    
+          <% for (let i = 0; i < basketballTeacher.length; i++) { %>    
             <% let number = i+1; %>
               <tr>
                 <td>
                   <%= number %>
                 </td>
                   <td>
-                    <%= footballTeacher[i].teacherName %>  
+                    <%= basketballTeacher[i].teacherName %>  
                   </td>
                   <td>
-                    <%= footballTeacher[i].teacherId %> 
+                    <%= basketballTeacher[i].teacherId %> 
                   </td>
                   <td>
-                    <%= footballTeacher[i].clubType %>  
+                    <%= basketballTeacher[i].clubType %>  
                   </td>
               </tr>
                   <% } %> 
@@ -290,23 +290,23 @@
     </tr>
    </thead>
    <tbody>
-<% for (let i = 0; i < football.length; i++) { %>    
+<% for (let i = 0; i < basketball.length; i++) { %>    
   <% let number = i+1; %>
     <tr>
       <td>
         <%= number %>
       </td>
         <td>
-          <%= football[i].studentName %>  
+          <%= basketball[i].studentName %>  
         </td>
         <td>
-               <%= football[i].studentId %> 
+               <%= basketball[i].studentId %> 
         </td>
         <td>
-           <%= football[i].studentNumber %> 
+           <%= basketball[i].studentNumber %> 
         </td>
         <td>
-              <%= football[i].clubType %>  
+              <%= basketball[i].clubType %>  
         </td>
     </tr>
         <% } %> 

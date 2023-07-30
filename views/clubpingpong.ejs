@@ -5,19 +5,21 @@
 <center>
   <% let alluser = pingpong.length; let allteacher = (pingpongTeacher.length)*5; %> 
   <% if (alluser >= allteacher) { %>
+  <p class="textForTopicClub">ชมรมปิงปอง</p>
   <p class="btn btn-secondary btn-lg">ชมรมปิงปองเต็มเเล้ว</p>
   <p>นักเรียนในชมรม <%= alluser %> คน เต็ม <%= allteacher %> คน</p>
   <% } %>
   <% if (alluser < allteacher) { %>
+    <p class="textForTopicClub">ชมรมปิงปอง</p>
+    <p>นักเรียนในชมรม <%= alluser %> คน เต็ม <%= allteacher %> คน</p>
     <button type="button" class="btn btn-primary clubAddBtn" data-bs-toggle="modal" data-bs-target="#addInfoModal">
       สมัครเข้าชมรมนี้
     </button>
-    <p>นักเรียนในชมรม <%= alluser %> คน เต็ม <%= allteacher %> คน</p>
     <% } %>
 </center>
 <% if (loggedIn) { %>
 <center>
-  <button type="button" class="btn btn-primary clubAddBtn" data-bs-toggle="modal" data-bs-target="#addInfoTeacherModal">
+  <button type="button" class="btn btn-success clubAddBtn" data-bs-toggle="modal" data-bs-target="#addInfoTeacherModal">
     เพิ่มครูสำหรับชมรมนี้
   </button>
   <table>
@@ -77,10 +79,11 @@
             <label for="clubType" class="text-dark clublabel">เลือกชมรม: <label class="text-danger" for="">*เลือกชมรมให้ถูกต้อง</label></label>
             <select class="form-select" name="clubType" >
               <option value="ฟุตบอล">ฟุตบอล</option>
-              <option value="ว่ายน้ำ">ว่ายน้ำ</option>
-              <option value="ปิงปอง">ปิงปอง</option>
               <option value="บาสเกตบอล">บาสเกตบอล</option>
-              <option value="แบตมินตัน">แบตมินตัน</option>
+              <option value="ปิงปอง">ปิงปอง</option>
+              <option value="ภาษาอังกฤษ">ภาษาอังกฤษ</option>
+              <option value="ภาษาญี่ปุ่น">ภาษาญี่ปุ่น</option>
+              <option value="ภาษาเกาหลี">ภาษาเกาหลี</option>
             </select>
           </div>
           <div class="modal-footer">
@@ -179,10 +182,11 @@
           <label for="clubType" class="text-dark clublabel">เลือกชมรม: <label class="text-danger" for="">*เลือกชมรมให้ถูกต้อง</label></label>
           <select class="form-select" name="clubType" >
             <option value="ฟุตบอล">ฟุตบอล</option>
-            <option value="ว่ายน้ำ">ว่ายน้ำ</option>
-            <option value="ปิงปอง">ปิงปอง</option>
             <option value="บาสเกตบอล">บาสเกตบอล</option>
-            <option value="แบตมินตัน">แบตมินตัน</option>
+            <option value="ปิงปอง">ปิงปอง</option>
+            <option value="ภาษาอังกฤษ">ภาษาอังกฤษ</option>
+            <option value="ภาษาญี่ปุ่น">ภาษาญี่ปุ่น</option>
+            <option value="ภาษาเกาหลี">ภาษาเกาหลี</option>
           </select>
         
             <label for="classselect" class="text-dark clublabel">ระดับชั้นที่ต้องการสมัคร:</label>
@@ -339,10 +343,11 @@
           <label for="clubType" class="text-dark clublabel">เลือกชมรม: <label class="text-danger" for="">*เลือกชมรมให้ถูกต้อง</label></label>
           <select class="form-select" name="clubType">
             <option value="ฟุตบอล">ฟุตบอล</option>
-            <option value="ว่ายน้ำ">ว่ายน้ำ</option>
-            <option value="ปิงปอง">ปิงปอง</option>
             <option value="บาสเกตบอล">บาสเกตบอล</option>
-            <option value="แบตมินตัน">แบตมินตัน</option>
+            <option value="ปิงปอง">ปิงปอง</option>
+            <option value="ภาษาอังกฤษ">ภาษาอังกฤษ</option>
+            <option value="ภาษาญี่ปุ่น">ภาษาญี่ปุ่น</option>
+            <option value="ภาษาเกาหลี">ภาษาเกาหลี</option>
           </select>
         
             <label for="classselect" class="text-dark clublabel">ระดับชั้นที่ต้องการสมัคร:</label>
@@ -393,10 +398,11 @@
           <label for="clubType" class="text-dark clublabel">เลือกชมรม: <label class="text-danger" for="">*เลือกชมรมให้ถูกต้อง</label></label>
           <select class="form-select" name="clubType">
             <option value="ฟุตบอล">ฟุตบอล</option>
-            <option value="ว่ายน้ำ">ว่ายน้ำ</option>
-            <option value="ปิงปอง">ปิงปอง</option>
             <option value="บาสเกตบอล">บาสเกตบอล</option>
-            <option value="แบตมินตัน">แบตมินตัน</option>
+            <option value="ปิงปอง">ปิงปอง</option>
+            <option value="ภาษาอังกฤษ">ภาษาอังกฤษ</option>
+            <option value="ภาษาญี่ปุ่น">ภาษาญี่ปุ่น</option>
+            <option value="ภาษาเกาหลี">ภาษาเกาหลี</option>
           </select>
 
         </div>
