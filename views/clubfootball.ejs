@@ -6,12 +6,14 @@
   <% let alluser = football.length; let allteacher = (footballTeacher.length)*5; %> 
   <% if (alluser >= allteacher) { %>
   <p class="textForTopicClub">ชมรมฟุตบอล</p>
-  <p class="btn btn-secondary btn-lg">ชมรมฟุตบอลเต็มเเล้ว</p>
   <p>นักเรียนในชมรม <%= alluser %> คน เต็ม <%= allteacher %> คน</p>
+  <p><img src="/images/football2.png" width="150px" alt=""></p>
+  <p class="btn btn-secondary btn-lg">ชมรมฟุตบอลเต็มเเล้ว</p>
   <% } %>
   <% if (alluser < allteacher) { %>
     <p class="textForTopicClub">ชมรมฟุตบอล</p>
     <p>นักเรียนในชมรม <%= alluser %> คน เต็ม <%= allteacher %> คน</p>
+    <p><img src="/images/football2.png" width="150px" alt=""></p>
     <button type="button" class="btn btn-primary clubAddBtn" data-bs-toggle="modal" data-bs-target="#addInfoModal">
       สมัครเข้าชมรมนี้
     </button>
@@ -273,19 +275,19 @@
    <thead>
     <tr>
       <th>
-        number
+        ลำดับ
       </th>
       <th>
-        name
+        ชื่อนักเรียน
       </th>
       <th>
-        studentID
+        รหัสนักเรียน
       </th>
       <th>
-        studentNumber
+        เลขที่นักเรียน
       </th>
       <th>
-        clubType
+        ชมรม
       </th>
     </tr>
    </thead>
@@ -340,15 +342,8 @@
           <label for="studentNumber" class="text-dark clublabel">เลขที่นักเรียน:</label>
           <input type="text" class="form-control" name="studentNumber">
 
-          <label for="clubType" class="text-dark clublabel">เลือกชมรม: <label class="text-danger" for="">*เลือกชมรมให้ถูกต้อง</label></label>
-          <select class="form-select" name="clubType">
-            <option value="ฟุตบอล">ฟุตบอล</option>
-            <option value="บาสเกตบอล">บาสเกตบอล</option>
-            <option value="ปิงปอง">ปิงปอง</option>
-            <option value="ภาษาอังกฤษ">ภาษาอังกฤษ</option>
-            <option value="ภาษาญี่ปุ่น">ภาษาญี่ปุ่น</option>
-            <option value="ภาษาเกาหลี">ภาษาเกาหลี</option>
-          </select>
+          <label for="clubType" class="text-dark clublabel">เลือกชมรม: </label>
+          <input class="form-control" type="text" value="ฟุตบอล" name="clubType" readonly="true">
         
             <label for="classselect" class="text-dark clublabel">ระดับชั้นที่ต้องการสมัคร:</label>
             <select class="form-select" name="classselect" id="">
@@ -392,15 +387,8 @@
           <label for="teacherId" class="text-dark clublabel">รหัสครู:</label>
           <input type="text" class="form-control" name="teacherId">
 
-          <label for="clubType" class="text-dark clublabel">เลือกชมรม: <label class="text-danger" for="">*เลือกชมรมให้ถูกต้อง</label></label>
-          <select class="form-select" name="clubType">
-            <option value="ฟุตบอล">ฟุตบอล</option>
-            <option value="บาสเกตบอล">บาสเกตบอล</option>
-            <option value="ปิงปอง">ปิงปอง</option>
-            <option value="ภาษาอังกฤษ">ภาษาอังกฤษ</option>
-            <option value="ภาษาญี่ปุ่น">ภาษาญี่ปุ่น</option>
-            <option value="ภาษาเกาหลี">ภาษาเกาหลี</option>
-          </select>
+          <label for="clubType" class="text-dark clublabel">เลือกชมรม: </label>
+          <input class="form-control" type="text" value="ฟุตบอล" name="clubType" readonly="true">
 
         </div>
         <div class="modal-footer">

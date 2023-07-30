@@ -71,11 +71,9 @@ footer {
 .clublabel {
   margin-top: 1rem;
 }
-.mainClubPage {
-  margin: 10rem 15rem 10rem 15rem;
-}
 
-/* --------------------------------------------------------------------   */
+
+/* -------------------------------------------------------------------- */
 /* ---------------------------------- images in club page ----------------------------------   */
 
 .football:hover {
@@ -112,6 +110,31 @@ footer {
 
 /* ----------------------------------- allClubPage ---------------------------------------------- */
 
+.headTextClubPage {
+margin-top: 15rem;
+font-size: 24px;
+cursor: auto;
+}
+.addMarginTopRow {
+  margin-top: 3rem;
+}
+.mainClubPage {
+  margin: 2rem 15rem 10rem 15rem;
+  background-color: rgba(0, 0, 0, 0.2);
+  padding: 15px;
+  border-radius: 5px;
+  border-width: 5px;
+  border-color: black;
+  border-style: solid;
+}
+.aInClubPage {
+  text-decoration:none;
+}
+.textForTopicClubPage {
+  margin-top: 1rem;
+  font-size: 24px;
+  color: aliceblue;
+}
 .textForTopicClub {
   font-size: 24px;
 }
