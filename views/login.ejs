@@ -5,9 +5,17 @@
   <div class="mb-3">
     <center><img class="LoginRegisimg" src="/images/key.png" alt="" width="70px"></center>
   </div>
+
+
+  <% if (valid != "") { %>
+      <p class="alert alert-danger">
+        <%= valid %>
+      </p>
+  <% } %>
+
   <div class="mb-3">
     <label  class="form-label text-dark">Email address</label>
-    <input type="email" class="form-control" name="username"  aria-describedby="emailHelp">
+    <input type="text" class="form-control" name="username" aria-describedby="emailHelp">
   </div>
   <div class="mb-3">
     <label  class="form-label text-dark">Password</label>

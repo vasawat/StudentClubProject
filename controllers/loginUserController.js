@@ -5,12 +5,14 @@ module.exports = function (req, res) {
     const inputuser = req.body.username;
     const inputpassword = req.body.password;
 
-    User.findOne({username:inputuser}).then((user)=> {
-        
+    let num = 0
+
+
+        User.findOne({username:inputuser}).then((user)=> {
         console.log(user)
 
         if(user) {
-            let compare = bcrypt.compare(inputpassword, user.password).then((match)=> {
+            bcrypt.compare(inputpassword, user.password).then((match)=> {
                 if (match) {
                     req.session.userId = user._id
                     res.redirect('/')
@@ -19,8 +21,13 @@ module.exports = function (req, res) {
                 }
             })
         } else {
+            if (inputuser == "" || inputpassword == ""){
+                let valid = "Enter your username or password"
+                req.flash('valid', valid)
+            };
             res.redirect('/login')
         }
-    })
+    })  
+    
     
 }

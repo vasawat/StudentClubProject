@@ -5,15 +5,20 @@
 <center>
   <% let alluser = english.length; let allteacher = (englishTeacher.length)*5; %> 
   <% if (alluser >= allteacher) { %>
-  <p class="textForTopicClub">ชมรมภาษาอังกฤษ</p>
+    <p class="textForTopicClub btn btn-dark btn-lg text-light">
+      ชมรมภาษาอังกฤษ
+      <img class="imgTopLeftHead1" src="/images/united-kingdom2.png" width="50px" alt="">
+    </p>
   <p>นักเรียนในชมรม <%= alluser %> คน เต็ม <%= allteacher %> คน</p>
-  <p><img src="/images/united-kingdom2.png" width="150px" alt=""></p>
   <p class="btn btn-secondary btn-lg">ชมรมภาษาอังกฤษเต็มเเล้ว</p>
   <% } %>
   <% if (alluser < allteacher) { %>
-    <p class="textForTopicClub">ชมรมภาษาอังกฤษ</p>
+    <p class="textForTopicClub btn btn-dark btn-lg text-light">
+      ชมรมภาษาอังกฤษ
+      <img class="imgTopLeftHead1" src="/images/united-kingdom2.png" width="50px" alt="">
+    </p>
     <p>นักเรียนในชมรม <%= alluser %> คน เต็ม <%= allteacher %> คน</p>
-    <p><img src="/images/united-kingdom2.png" width="150px" alt=""></p>
+    <!-- <p><img src="/images/united-kingdom2.png" width="150px" alt=""></p> -->
     <button type="button" class="btn btn-primary clubAddBtn" data-bs-toggle="modal" data-bs-target="#addInfoModal">
       สมัครเข้าชมรมนี้
     </button>
@@ -55,11 +60,11 @@
               <%= englishTeacher[i].clubType %>  
             </td>
             <td class="d-flex gap-2">
-              <form action="/edit/teacher" method="post">
+              
                 <button class="btn btn-warning" data-bs-toggle="modal" data-bs-target="#editInfoTeacherModal<%= number %>">Edit</button>
   
   <!-------------------------------------------- Editinfoteacher ----------------------------------------------------->
-  
+  <form action="/edit/teacher" method="post">
     <!-- Modal -->
     <div class="modal fade" id="editInfoTeacherModal<%= number %>" tabindex="-1" aria-labelledby="editInfoTeacherModalLabel<%= number %>" aria-hidden="true">
       <div class="modal-dialog">
@@ -156,11 +161,11 @@
             <%= english[i].clubType %>  
           </td>
           <td class="d-flex gap-2">
-            <form action="/edit/student" method="post">
+            
               <button class="btn btn-warning" data-bs-toggle="modal" data-bs-target="#editInfoModal<%= number %>">Edit</button>
 
 <!-------------------------------------------- Editinfostudent ----------------------------------------------------->
-
+<form action="/edit/student" method="post">
   <div class="modal fade" id="editInfoModal<%= number %>" tabindex="-1" aria-labelledby="editInfoModalLabel<%= number %>" aria-hidden="true">
     <div class="modal-dialog">
       <div class="modal-content">

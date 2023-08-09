@@ -14,13 +14,11 @@ const expressSession = require('express-session');
 
 const indexRouter = require('./routes/index');
 const usersRouter = require('./routes/users');
-const homePageController = require('./controllers/homePageController');
-const loginController = require('./controllers/loginController');
 const registerController = require('./controllers/registerController');
 const storeUserController = require('./controllers/storeUserController');
 const loginUserController = require('./controllers/loginUserController');
 const logoutController = require('./controllers/logoutController');
-const clubController = require('./controllers/clubController');
+const allClubPageController = require('./routes/allclub');
 
 const storeStudentController = require('./controllers/storeStudentController');
 const storeTeacherController = require('./controllers/storeTeacherController');
@@ -57,22 +55,21 @@ app.use("*", (req, res, next)=>{
 app.use(logger('dev'));
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
-app.use(bodyParser.urlencoded({ extended: true }))
+app.use(bodyParser.urlencoded({ extended: true }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
+app.use(express.static(path.join(__dirname, 'routes')));
 
 
 
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
 
-app.use ('/home', homePageController);
-app.use ('/login', loginController);
 app.use ('/register', registerController);
 app.use ('/user/register', storeUserController);
 app.use ('/user/login', loginUserController);
 app.use ('/user/logout', logoutController);
-app.use ('/clubPage', clubController);
+app.use('/club', allClubPageController);
 
 app.use ('/store/student', storeStudentController);
 app.use ('/store/teacher', storeTeacherController);
@@ -83,71 +80,6 @@ app.use ('/edit/teacher', EditInfoTeacherController);
 
 
 
-
-
-
-
-// ----------------------------allClubPage--------------------------------------
-const Club = require('./models/club')
-const Teacher = require('./models/teacher')
-
-app.get('/football',function(req, res, next){
-  Club.find({clubType: "ฟุตบอล"}).then((infoStudent)=> {
-      Teacher.find({clubType: "ฟุตบอล"}).then((infoTeacher)=> {
-      res.render('clubfootball',{football: infoStudent, footballTeacher: infoTeacher});
-})
-})
-})
-
-app.get('/pingpong',function(req, res, next){
-  Club.find({clubType: "ปิงปอง"}).then((infoStudent)=> {
-     Teacher.find({clubType: "ปิงปอง"}).then((infoTeacher)=> {
-     res.render('clubpingpong',{pingpong: infoStudent, pingpongTeacher: infoTeacher});
-})
-})
-})
-
-app.get('/basketball',function(req, res, next){
-  Club.find({clubType: "บาสเกตบอล"}).then((infoStudent)=> {
-    Teacher.find({clubType: "บาสเกตบอล"}).then((infoTeacher)=> {
-    res.render('clubbasketball',{basketball: infoStudent, basketballTeacher: infoTeacher});
-})
-})
-})
-
-app.get('/english',function(req, res, next){
-  Club.find({clubType: "ภาษาอังกฤษ"}).then((infoStudent)=> {
-    Teacher.find({clubType: "ภาษาอังกฤษ"}).then((infoTeacher)=> {
-    res.render('clubenglish',{english: infoStudent, englishTeacher: infoTeacher});
-})
-})
-})
-
-app.get('/japan',function(req, res, next){
-  Club.find({clubType: "ภาษาญี่ปุ่น"}).then((infoStudent)=> {
-    Teacher.find({clubType: "ภาษาญี่ปุ่น"}).then((infoTeacher)=> {
-    res.render('clubjapan',{japan: infoStudent, japanTeacher: infoTeacher});
-})
-})
-})
-
-app.get('/korea',function(req, res, next){
-  Club.find({clubType: "ภาษาเกาหลี"}).then((infoStudent)=> {
-    Teacher.find({clubType: "ภาษาเกาหลี"}).then((infoTeacher)=> {
-    res.render('clubkorea',{korea: infoStudent, koreaTeacher: infoTeacher});
-})
-})
-})
-
-// app.get('',function(req, res, next){
-//   Club.find({clubType: ""}).then((infoStudent)=> {
-//     Teacher.find({clubType: ""}).then((infoTeacher)=> {
-//     res.render('',{: infoStudent, Teacher: infoTeacher});
-// })
-// })
-// })
-
-// ------------------------------------------------------------------------------
 
 
 // catch 404 and forward to error handler
