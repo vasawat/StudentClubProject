@@ -34,9 +34,16 @@ var app = express();
 
 mongoose.Promise = global.Promise;
 const url = "mongodb+srv://vasawat:1234@authenticationtest.9popvhf.mongodb.net/?retryWrites=true&w=majority"
-mongoose.connect(url)
-     .then(() => console.log('connection success!!'))
-     .catch((err) => console.error(err));
+
+
+mongoose
+  .connect(url, {
+    useNewUrlParser: true,
+    useUnifiedTopology: true,
+  })
+  .then(() => console.log("Db connected!"))
+  .catch(err => console.log(err));
+
 
 global.loggedIn = null ;
 
