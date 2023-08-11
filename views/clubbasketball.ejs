@@ -6,15 +6,15 @@
   <% let alluser = basketball.length; let allteacher = (basketballTeacher.length)*5; %> 
   <% if (alluser >= allteacher) { %>
     <p class="textForTopicClub btn btn-dark btn-lg text-light">
-      ชมรมบาสเกตบอล
+      <span class="textClubHead">ชมรม</span>บาสเกตบอล
       <img class="imgTopLeftHead1" src="/images/basketball-ball2.png" width="50px" alt="">
     </p>
   <p>นักเรียนในชมรม <%= alluser %> คน เต็ม <%= allteacher %> คน</p>
-  <p class="btn btn-secondary btn-lg">ชมรมบาสเกตบอลเต็มเเล้ว</p>
+  <p class="btn btn-secondary btn-lg"><span class="textClubHead">ชมรม</span>บาสเกตบอลเต็มเเล้ว</p>
   <% } %>
   <% if (alluser < allteacher) { %>
     <p class="textForTopicClub btn btn-dark btn-lg text-light">
-      ชมรมบาสเกตบอล
+      <span class="textClubHead">ชมรม</span>บาสเกตบอล
       <img class="imgTopLeftHead1" src="/images/basketball-ball2.png" width="50px" alt="">
     </p>
     <p>นักเรียนในชมรม <%= alluser %> คน เต็ม <%= allteacher %> คน</p>
@@ -84,10 +84,21 @@
             <input type="text" class="form-control" name="teacherId" value="<%= basketballTeacher[i].teacherId  %> ">
   
             <label for="clubType" class="text-dark clublabel">เลือกชมรม: <label class="text-danger" for="">*เลือกชมรมให้ถูกต้อง</label></label>
-            <select class="form-select" name="clubType" >
+            <select class="form-select" name="clubType" >           
               <option value="ฟุตบอล">ฟุตบอล</option>
               <option value="บาสเกตบอล">บาสเกตบอล</option>
               <option value="ปิงปอง">ปิงปอง</option>
+              <option value="แบดมินตัน">แบดมินตัน</option>
+              <option value="ดวงดาวกับชีวิต">ดวงดาวกับชีวิต</option>
+              <option value="คณิตศาสตร์เบื้องต้น">คณิตศาสตร์เบื้องต้น</option>
+              <option value="คณิตศาสตร์เพิ่มเติม1">คณิตศาสตร์เพิ่มเติม1</option>
+              <option value="คณิตศาสตร์เพิ่มเติม2">คณิตศาสตร์เพิ่มเติม2</option>
+              <option value="กฏหมายเบื้องต้น">กฏหมายเบื้องต้น</option>
+              <option value="วาดเขียน5">วาดเขียน5</option>
+              <option value="การอ่านและพิจารณาวรรณกรรม">การอ่านและพิจารณาวรรณกรรม</option>
+              <option value="ดนตรีไทยสัมพันธ์3">ดนตรีไทยสัมพันธ์3</option>
+              <option value="งานเขียนแบบ">งานเขียนแบบ</option>
+              <option value="ภาษาจีนเบื้องต้น">ภาษาจีนเบื้องต้น</option>
               <option value="ภาษาอังกฤษ">ภาษาอังกฤษ</option>
               <option value="ภาษาญี่ปุ่น">ภาษาญี่ปุ่น</option>
               <option value="ภาษาเกาหลี">ภาษาเกาหลี</option>
@@ -191,6 +202,17 @@
             <option value="ฟุตบอล">ฟุตบอล</option>
             <option value="บาสเกตบอล">บาสเกตบอล</option>
             <option value="ปิงปอง">ปิงปอง</option>
+            <option value="แบดมินตัน">แบดมินตัน</option>
+            <option value="ดวงดาวกับชีวิต">ดวงดาวกับชีวิต</option>
+            <option value="คณิตศาสตร์เบื้องต้น">คณิตศาสตร์เบื้องต้น</option>
+            <option value="คณิตศาสตร์เพิ่มเติม1">คณิตศาสตร์เพิ่มเติม1</option>
+            <option value="คณิตศาสตร์เพิ่มเติม2">คณิตศาสตร์เพิ่มเติม2</option>
+            <option value="กฏหมายเบื้องต้น">กฏหมายเบื้องต้น</option>
+            <option value="วาดเขียน5">วาดเขียน5</option>
+            <option value="การอ่านและพิจารณาวรรณกรรม">การอ่านและพิจารณาวรรณกรรม</option>
+            <option value="ดนตรีไทยสัมพันธ์3">ดนตรีไทยสัมพันธ์3</option>
+            <option value="งานเขียนแบบ">งานเขียนแบบ</option>
+            <option value="ภาษาจีนเบื้องต้น">ภาษาจีนเบื้องต้น</option>
             <option value="ภาษาอังกฤษ">ภาษาอังกฤษ</option>
             <option value="ภาษาญี่ปุ่น">ภาษาญี่ปุ่น</option>
             <option value="ภาษาเกาหลี">ภาษาเกาหลี</option>
@@ -406,10 +428,5 @@
 </form>
 
 <!-------------------------------------------- ----------------------------------------------------->
-<script>
-  // Refresh the page after the information is inserted into the database
-  document.querySelector('#formAddInfo').addEventListener('submit', function() {
-    setTimeout(location.reload(),3000);
-  });
-  </script>
+
 <%- include("footer") %>

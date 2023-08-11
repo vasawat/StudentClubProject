@@ -4,7 +4,7 @@ var router = express.Router();
 /* GET home page. */
 
 router.get('/',function(req, res, next){
-        res.render('home');
+        res.render('index');
 });
 
 router.get('/clubPage',function(req, res, next){
@@ -13,7 +13,6 @@ router.get('/clubPage',function(req, res, next){
 
 router.get('/login',function(req, res, next){
         let valid = req.flash('valid')
-        console.log(valid)
         res.render('login',{valid : valid});
 });
 

@@ -3,24 +3,25 @@
 <section class="clubSection">
 <div class="clubtable">
 <center>
-  <% let alluser = japan.length; let allteacher = (japanTeacher.length)*5; %> 
+  <% let alluser = clubmathprimary.length; let allteacher = (clubmathprimaryTeacher.length)*5; %> 
   <% if (alluser >= allteacher) { %>
     <p class="textForTopicClub btn btn-dark btn-lg text-light">
-      <span class="textClubHead">ชมรม</span>ภาษาญี่ปุ่น
-      <img class="imgTopLeftHead1" src="/images/japan2.png" width="50px" alt="">
+      <span class="textClubHead">ชมรม</span>คณิตศาสตร์เบื้องต้น
+      <img class="imgTopLeftHead1" src="/images/math-book2.png" width="50px" alt="">
     </p>
   <p>นักเรียนในชมรม <%= alluser %> คน เต็ม <%= allteacher %> คน</p>
-  <p class="btn btn-secondary btn-lg"><span class="textClubHead">ชมรม</span>ภาษาญี่ปุ่นเต็มเเล้ว</p>
+  <p class="btn btn-secondary btn-lg"><span class="textClubHead">ชมรม</span>คณิตศาสตร์เบื้องต้นเต็มเเล้ว</p>
   <% } %>
   <% if (alluser < allteacher) { %>
     <p class="textForTopicClub btn btn-dark btn-lg text-light">
-      <span class="textClubHead">ชมรม</span>ภาษาญี่ปุ่น
-      <img class="imgTopLeftHead1" src="/images/japan2.png" width="50px" alt="">
+      <span class="textClubHead">ชมรม</span>คณิตศาสตร์เบื้องต้น
+      <img class="imgTopLeftHead1" src="/images/math-book2.png" width="50px" alt="">
     </p>
     <p>นักเรียนในชมรม <%= alluser %> คน เต็ม <%= allteacher %> คน</p>
     <button type="button" class="btn btn-primary clubAddBtn" data-bs-toggle="modal" data-bs-target="#addInfoModal">
       สมัครเข้าชมรมนี้
     </button>
+
     <% } %>
 </center>
 <% if (loggedIn) { %>
@@ -46,17 +47,17 @@
       </tr>
     </thead>
     <tbody>
-      <% for (let i = 0; i < japanTeacher.length; i++) { %>    
+      <% for (let i = 0; i < clubmathprimaryTeacher.length; i++) { %>    
         <% let number = i+1; %>
           <tr>
             <td>
-              ครู <%= japanTeacher[i].teacherName %>  
+              ครู <%= clubmathprimaryTeacher[i].teacherName %>  
             </td>
             <td>
-              <%= japanTeacher[i].teacherId %> 
+              <%= clubmathprimaryTeacher[i].teacherId %> 
             </td>
             <td>
-              <%= japanTeacher[i].clubType %>  
+              <%= clubmathprimaryTeacher[i].clubType %>  
             </td>
             <td class="d-flex gap-2">
               
@@ -74,16 +75,16 @@
           </div>
           <div class="modal-body">
   
-          <input type="hidden" name="sendidtoedit" value="<%= japanTeacher[i]._id %>">
+          <input type="hidden" name="sendidtoedit" value="<%= clubmathprimaryTeacher[i]._id %>">
   
             <label for="studentName" class="text-dark clublabel">ชื่อ-นามสกุล:</label>
-            <input type="text" class="form-control" name="teacherName" value="<%= japanTeacher[i].teacherName%>">
+            <input type="text" class="form-control" name="teacherName" value="<%= clubmathprimaryTeacher[i].teacherName%>">
   
             <label for="studentId" class="text-dark clublabel">รหัสครู:</label>
-            <input type="text" class="form-control" name="teacherId" value="<%= japanTeacher[i].teacherId  %> ">
+            <input type="text" class="form-control" name="teacherId" value="<%= clubmathprimaryTeacher[i].teacherId  %> ">
   
             <label for="clubType" class="text-dark clublabel">เลือกชมรม: <label class="text-danger" for="">*เลือกชมรมให้ถูกต้อง</label></label>
-            <select class="form-select" name="clubType" >
+            <select class="form-select" name="clubType" >           
               <option value="ฟุตบอล">ฟุตบอล</option>
               <option value="บาสเกตบอล">บาสเกตบอล</option>
               <option value="ปิงปอง">ปิงปอง</option>
@@ -115,7 +116,7 @@
 
         </form>
         <form action="/delete/teacher" method="post">
-        <input type="hidden" name="sendid" value="<%= japanTeacher[i]._id %>">
+        <input type="hidden" name="sendid" value="<%= clubmathprimaryTeacher[i]._id %>">
         <button type="submit" class="btn btn-danger">Delete</button>
         </form>
         </td>
@@ -152,23 +153,23 @@
         </tr>
        </thead>
        <tbody>
-    <% for (let i = 0; i < japan.length; i++) { %>     
+    <% for (let i = 0; i < clubmathprimary.length; i++) { %>     
       <% let number = i+1; %>
       <tr>
         <td>
           <%= number %>
         </td>
           <td>
-            <%= japan[i].studentName %>  
+            <%= clubmathprimary[i].studentName %>  
           </td>
           <td>
-            <%= japan[i].studentId %> 
+            <%= clubmathprimary[i].studentId %> 
           </td>
           <td>
-            <%= japan[i].studentNumber %> 
+            <%= clubmathprimary[i].studentNumber %> 
           </td>
           <td>
-            <%= japan[i].clubType %>  
+            <%= clubmathprimary[i].clubType %>  
           </td>
           <td class="d-flex gap-2">
             
@@ -185,16 +186,16 @@
         </div>
         <div class="modal-body">
 
-        <input type="hidden" name="sendidtoedit" value="<%= japan[i]._id %>">
+        <input type="hidden" name="sendidtoedit" value="<%= clubmathprimary[i]._id %>">
 
           <label for="studentName" class="text-dark clublabel">ชื่อ-นามสกุล:</label>
-          <input type="text" class="form-control" name="studentName" value="<%= japan[i].studentName%>">
+          <input type="text" class="form-control" name="studentName" value="<%= clubmathprimary[i].studentName%>">
 
           <label for="studentId" class="text-dark clublabel">รหัสนักเรียน:</label>
-          <input type="text" class="form-control" name="studentId" value="<%= japan[i].studentId  %> ">
+          <input type="text" class="form-control" name="studentId" value="<%= clubmathprimary[i].studentId  %> ">
 
           <label for="studentNumber" class="text-dark clublabel">เลขที่นักเรียน:</label>
-          <input type="text" class="form-control" name="studentNumber" value="<%= japan[i].studentNumber  %>">
+          <input type="text" class="form-control" name="studentNumber" value="<%= clubmathprimary[i].studentNumber  %>">
 
           <label for="clubType" class="text-dark clublabel">เลือกชมรม: <label class="text-danger" for="">*เลือกชมรมให้ถูกต้อง</label></label>
           <select class="form-select" name="clubType" >
@@ -240,7 +241,7 @@
 
   </form>
   <form action="/delete/student" method="post">
-    <input type="hidden" name="sendid" value="<%= japan[i]._id %>">
+    <input type="hidden" name="sendid" value="<%= clubmathprimary[i]._id %>">
     <button type="submit" class="btn btn-danger">Delete</button>
   </form>
   </td>
@@ -253,8 +254,6 @@
   </center>
 
   <% } %>
-
-
 
   <% if (!loggedIn) { %>
     <center>
@@ -276,20 +275,20 @@
           </tr>
         </thead>
         <tbody>
-          <% for (let i = 0; i < japanTeacher.length; i++) { %>    
+          <% for (let i = 0; i < clubmathprimaryTeacher.length; i++) { %>    
             <% let number = i+1; %>
               <tr>
                 <td>
                   <%= number %>
                 </td>
                   <td>
-                    <%= japanTeacher[i].teacherName %>  
+                    <%= clubmathprimaryTeacher[i].teacherName %>  
                   </td>
                   <td>
-                    <%= japanTeacher[i].teacherId %> 
+                    <%= clubmathprimaryTeacher[i].teacherId %> 
                   </td>
                   <td>
-                    <%= japanTeacher[i].clubType %>  
+                    <%= clubmathprimaryTeacher[i].clubType %>  
                   </td>
               </tr>
                   <% } %> 
@@ -297,7 +296,7 @@
       </table>
       </center>
   <center>
-  <table class="studentTable">
+  <table class="studentTable"> 
    <thead>
     <tr>
       <th>
@@ -318,23 +317,23 @@
     </tr>
    </thead>
    <tbody>
-<% for (let i = 0; i < japan.length; i++) { %>    
+<% for (let i = 0; i < clubmathprimary.length; i++) { %>    
   <% let number = i+1; %>
     <tr>
       <td>
         <%= number %>
       </td>
         <td>
-          <%= japan[i].studentName %>  
+          <%= clubmathprimary[i].studentName %>  
         </td>
         <td>
-               <%= japan[i].studentId %> 
+               <%= clubmathprimary[i].studentId %> 
         </td>
         <td>
-           <%= japan[i].studentNumber %> 
+           <%= clubmathprimary[i].studentNumber %> 
         </td>
         <td>
-              <%= japan[i].clubType %>  
+              <%= clubmathprimary[i].clubType %>  
         </td>
     </tr>
         <% } %> 
@@ -348,8 +347,9 @@
 </section>
 
 <!-------------------------------------------- Addinfo ----------------------------------------------------->
+<!--  -->
 
-<form action="/store/student" method="POST">
+<form action="/store/student" method="POST" id="formAddInfo" name="formAddInfo">
   <div class="modal fade" id="addInfoModal" tabindex="-1" aria-labelledby="addInfoModalLabel" aria-hidden="true">
     <div class="modal-dialog">
       <div class="modal-content">
@@ -369,7 +369,7 @@
           <input type="text" class="form-control" name="studentNumber">
 
           <label for="clubType" class="text-dark clublabel">เลือกชมรม: </label>
-          <input class="form-control" type="text" value="ภาษาญี่ปุ่น" name="clubType" readonly="true">
+          <input class="form-control" type="text" value="คณิตศาสตร์เบื้องต้น" name="clubType" readonly="true">
         
             <label for="classselect" class="text-dark clublabel">ระดับชั้นที่ต้องการสมัคร:</label>
             <select class="form-select" name="classselect" id="">
@@ -384,7 +384,7 @@
         </div>
         <div class="modal-footer">
           <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-          <button type="submit" class="btn btn-primary"  data-bs-dismiss="modal">Save changes</button>
+          <button type="submit" class="btn btn-primary" onclick="" data-bs-dismiss="modal">Save changes</button>
         </div>
       </div>
     </div>
@@ -414,7 +414,7 @@
           <input type="text" class="form-control" name="teacherId">
 
           <label for="clubType" class="text-dark clublabel">เลือกชมรม: </label>
-          <input class="form-control" type="text" value="ภาษาญี่ปุ่น" name="clubType" readonly="true">
+          <input class="form-control" type="text" value="คณิตศาสตร์เบื้องต้น" name="clubType" readonly="true">
 
         </div>
         <div class="modal-footer">

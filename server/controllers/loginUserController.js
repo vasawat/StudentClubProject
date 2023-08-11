@@ -5,7 +5,6 @@ module.exports = function (req, res) {
     const inputuser = req.body.username;
     const inputpassword = req.body.password;
 
-    let num = 0
 
 
         User.findOne({username:inputuser}).then((user)=> {

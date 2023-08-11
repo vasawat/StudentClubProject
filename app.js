@@ -12,23 +12,23 @@ const expressSession = require('express-session');
 
 
 
-const indexRouter = require('./routes/index');
-const usersRouter = require('./routes/users');
-const registerController = require('./controllers/registerController');
-const storeUserController = require('./controllers/storeUserController');
-const loginUserController = require('./controllers/loginUserController');
-const logoutController = require('./controllers/logoutController');
-const allClubPageController = require('./routes/allclub');
+const indexRouter = require('./server/routes/index');
+const usersRouter = require('./server/routes/users');
+const registerController = require('./server/controllers/registerController');
+const storeUserController = require('./server/controllers/storeUserController');
+const loginUserController = require('./server/controllers/loginUserController');
+const logoutController = require('./server/controllers/logoutController');
+const allClubPageController = require('./server/routes/allclub');
 
-const storeStudentController = require('./controllers/storeStudentController');
-const storeTeacherController = require('./controllers/storeTeacherController');
-const deleteInfoClubController = require('./controllers/deleteInfoClubController');
-const deleteInfoTeacherController = require('./controllers/deleteTeacherController');
-const EditInfoClubController = require('./controllers/EditInfoClubController');
-const EditInfoTeacherController = require('./controllers/EditInfoTeacherController');
+const storeStudentController = require('./server/controllers/storeStudentController');
+const storeTeacherController = require('./server/controllers/storeTeacherController');
+const deleteInfoClubController = require('./server/controllers/deleteInfoClubController');
+const deleteInfoTeacherController = require('./server/controllers/deleteTeacherController');
+const EditInfoClubController = require('./server/controllers/EditInfoClubController');
+const EditInfoTeacherController = require('./server/controllers/EditInfoTeacherController');
 
 
-const redirectIfAuth = require('./middleware/redirectauth');
+const redirectIfAuth = require('./server/middleware/redirectauth');
 
 var app = express();
 

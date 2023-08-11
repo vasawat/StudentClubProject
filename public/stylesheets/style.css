@@ -7,17 +7,17 @@ body {
 }
 
 
-.main{
-  align-items: center;
-  margin-top: 20%;
-}
 .clubbtn {
   font-size: 30px;
   padding: 1rem 3rem;
   margin-top: 2rem;
 }
 .homePageSection {
-  padding: 0 19%;
+  align-items: center;
+  margin-left: 10rem;
+  margin-top: 15rem;
+  display: flex;
+  justify-content: center;
 }
 
 
@@ -27,6 +27,7 @@ body {
   padding: 25px 10%;
 }
 .mynavscroll {
+  font-size: 15px;
   padding: 25px 10%;
 }
 .navlist{
@@ -41,8 +42,6 @@ body {
   border-bottom: 2px solid white;
 }
 
-
-
 /* ----------------------------------footer ----------------------------------   */
 
 footer {
@@ -52,12 +51,12 @@ footer {
   width: 100%;
 }
 .myfooter {
-
+  padding: 3rem 0 2rem 0;
   text-align: center;
 }
 .footerlogo {
-  width: 50px;
-  height: 20px;
+  margin-right: 5px;
+  vertical-align: middle;
 }
 
 /* ---------------------------------------------------------------------   */
@@ -80,30 +79,7 @@ footer {
   margin-top: 1rem;
 }
 
-
 /* -------------------------------------------------------------------- */
-/* ---------------------------------- images in club page ----------------------------------   */
-
-.football:hover {
-  content: url(/images/football1.png);
-}
-.pingpong:hover {
-  content: url(/images/ping-pong1.png);
-}
-.basketball:hover {
-  content: url(/images/basketball-ball1.png);
-}
-.english:hover {
-  content: url(/images/united-kingdom1.png);
-}
-.japan:hover {
-  content: url(/images/japan1.png);
-}
-.korea:hover {
-  content: url(/images/south-korea1.png);
-}
-
-/* --------------------------------------------------------------------   */
 /* ---------------------------------- show info student & teacher ----------------------------------   */
 
 .clubAddBtn {
@@ -159,15 +135,75 @@ cursor: auto;
   left: -5%;
 }
 
+/* ---------------------------------- images in club page ----------------------------------   */
+
+.football:hover {
+  content: url(/images/football1.png);
+}
+.pingpong:hover {
+  content: url(/images/ping-pong1.png);
+}
+.basketball:hover {
+  content: url(/images/basketball-ball1.png);
+}
+.english:hover {
+  content: url(/images/united-kingdom1.png);
+}
+.japan:hover {
+  content: url(/images/japan1.png);
+}
+.korea:hover {
+  content: url(/images/south-korea1.png);
+}
+.badminton:hover {
+  content: url(/images/badminton1.png);
+}
+.starsAndLife:hover {
+  content: url(/images/star1.png);
+}
+.maths:hover {
+  content: url(/images/maths1.png);
+}
+.art:hover {
+  content: url(/images/color-palette1.png);
+}
+.literature:hover {
+  content: url(/images/books1.png);
+}
+.law:hover {
+  content: url(/images/law1.png);
+}
+.music3:hover {
+  content: url(/images/musical-note1.png);
+}
+.drawing:hover {
+  content: url(/images/drawing1.png);
+}
+.Chinese:hover {
+  content: url(/images/Chinese1.png);
+}
+.mathbook:hover {
+  content: url(/images/math-book1.png);
+}
+
+/* --------------------------------------------------------------------   */
 
 @media (max-width: 426px) {
   body {
     font-size: 19px;
   }
-
+  .formlogin {
+    padding: 3rem;
+    width: 300px;
+  }
   /* homepage */
+  .homePageSection {
+    margin-top: 10rem;
+    margin-left: 0;
+    display: block;
+  }
   #imgHomePage {
-    width: 200px;
+    width: 250px;
     margin-top: 2rem;
   }
   .clubbtn {
@@ -210,6 +246,9 @@ cursor: auto;
     font-size: 25px;
     cursor: auto;
     background-color: rgba(0, 0, 0, 0.5);
+  }
+  .textClubHead {
+    display: none;
   }
   .clubAddBtn {
     margin-bottom: 2rem;
