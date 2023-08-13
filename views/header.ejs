@@ -18,12 +18,16 @@
     <nav class="navbar navbar-expand-lg mynav bg-dark">
         <div class="container-fluid">
           <a class="navbar-brand text-light"  href="/">โรงเรียนท่าตะโกพิทยาคม</a>
-          <div class="navlist">
-          <button class="navbar-toggler navlist bg-light" type="button" data-bs-toggle="collapse" data-bs-target="#navbarScroll" aria-controls="navbarScroll" aria-expanded="false" aria-label="Toggle navigation">
+          
+          <div class="justify-content-end">
+          <button class="navbar-toggler bg-light justify-content-end" type="button" data-bs-toggle="collapse" data-bs-target="#navbarScroll" aria-controls="navbarScroll" aria-expanded="false" aria-label="Toggle navigation">
             <i class="ri-menu-line"></i>
           </button>
+          
+
+          <div class="navlist">
           <div class="collapse navbar-collapse " id="navbarScroll">
-            <ul class="navbar-nav me-auto my-2 my-lg-0 " >
+            <ul class="navbar-nav my-2 my-lg-0 " >
               <li class="nav-item">
                 <a class="nav-link text-light" href="/">หน้าเเรก</a>
               </li>
@@ -38,14 +42,12 @@
               <% if (!loggedIn) { %>
                 <li class="nav-item">
                   <a class="nav-link text-light" href="/login">เข้าสู่ระบบ</a>
-                </li>  
-                <li class="nav-item">
-                  <a class="nav-link text-light" href="/register">สมัครสมาชิก</a>
-                </li>   
+                </li>
               <% } %>
             </ul>
           </div>
          </div>
+        </div>
         </div>
       </nav>
 

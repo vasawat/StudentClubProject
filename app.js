@@ -14,8 +14,6 @@ const expressSession = require('express-session');
 
 const indexRouter = require('./server/routes/index');
 const usersRouter = require('./server/routes/users');
-const registerController = require('./server/controllers/registerController');
-const storeUserController = require('./server/controllers/storeUserController');
 const loginUserController = require('./server/controllers/loginUserController');
 const logoutController = require('./server/controllers/logoutController');
 const allClubPageController = require('./server/routes/allclub');
@@ -72,8 +70,6 @@ app.use(express.static(path.join(__dirname, 'routes')));
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
 
-app.use ('/register', registerController);
-app.use ('/user/register', storeUserController);
 app.use ('/user/login', loginUserController);
 app.use ('/user/logout', logoutController);
 app.use('/club', allClubPageController);

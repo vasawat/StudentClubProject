@@ -188,9 +188,12 @@ cursor: auto;
 
 /* --------------------------------------------------------------------   */
 
-@media (max-width: 426px) {
+@media screen and (max-width: 767px) {
   body {
     font-size: 19px;
+  }
+  .mynav {
+    padding: 25px 15px;
   }
   .formlogin {
     padding: 3rem;
@@ -267,5 +270,12 @@ cursor: auto;
     position: absolute;
     top: -25%;
     left: -5%;
+  }
+  .buttonEditDeleteLogin {
+    font-size: 9px;
+    padding: 0.2rem 0.5rem;
+  }
+  .deleteWhenLoginMobile {
+    display: none;
   }
 }

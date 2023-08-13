@@ -3,7 +3,7 @@
 <section class="clubSection">
 <div class="clubtable">
 <center>
-  <% let alluser = korea.length; let allteacher = (koreaTeacher.length)*5; %> 
+  <% let alluser = korea.length; let allteacher = (koreaTeacher.length)*20; %> 
   <% if (alluser >= allteacher) { %>
     <p class="textForTopicClub btn btn-dark btn-lg text-light">
       <span class="textClubHead">ชมรม</span>ภาษาเกาหลี
@@ -34,7 +34,7 @@
         <th>
           teacherName
         </th>
-        <th>
+        <th class="deleteWhenLoginMobile">
           teacherId
         </th>
         <th>
@@ -52,7 +52,7 @@
             <td>
               ครู <%= koreaTeacher[i].teacherName %>  
             </td>
-            <td>
+            <td class="deleteWhenLoginMobile">
               <%= koreaTeacher[i].teacherId %> 
             </td>
             <td>
@@ -60,7 +60,7 @@
             </td>
             <td class="d-flex gap-2">
               
-                <button class="btn btn-warning" data-bs-toggle="modal" data-bs-target="#editInfoTeacherModal<%= number %>">Edit</button>
+                <button class="btn btn-warning buttonEditDeleteLogin" data-bs-toggle="modal" data-bs-target="#editInfoTeacherModal<%= number %>">Edit</button>
   
   <!-------------------------------------------- Editinfoteacher ----------------------------------------------------->
   <form action="/edit/teacher" method="post">
@@ -116,7 +116,7 @@
         </form>
         <form action="/delete/teacher" method="post">
         <input type="hidden" name="sendid" value="<%= koreaTeacher[i]._id %>">
-        <button type="submit" class="btn btn-danger">Delete</button>
+        <button type="submit" class="btn btn-danger buttonEditDeleteLogin">Delete</button>
         </form>
         </td>
         </tr>
@@ -131,16 +131,16 @@
       <table class="studentTable">
        <thead>
         <tr>
-          <th>
+          <th class="deleteWhenLoginMobile">
             number
           </th>
           <th>
             name
           </th>
-          <th>
+          <th class="deleteWhenLoginMobile">
             studentID
           </th>
-          <th>
+          <th class="deleteWhenLoginMobile">
             studentNumber
           </th>
           <th>
@@ -172,7 +172,7 @@
           </td>
           <td class="d-flex gap-2">
             
-              <button class="btn btn-warning" data-bs-toggle="modal" data-bs-target="#editInfoModal<%= number %>">Edit</button>
+              <button class="btn btn-warning buttonEditDeleteLogin" data-bs-toggle="modal" data-bs-target="#editInfoModal<%= number %>">Edit</button>
 
 <!-------------------------------------------- Editinfostudent ----------------------------------------------------->
 <form action="/edit/student" method="post">
@@ -241,7 +241,7 @@
   </form>
   <form action="/delete/student" method="post">
     <input type="hidden" name="sendid" value="<%= korea[i]._id %>">
-    <button type="submit" class="btn btn-danger">Delete</button>
+    <button type="submit" class="btn btn-danger buttonEditDeleteLogin">Delete</button>
   </form>
   </td>
   </tr>
