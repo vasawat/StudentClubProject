@@ -1,16 +1,11 @@
 user for login to admin role
 
-admin
-thatako123456789
+ID:admin PASSWORD:thatako123456789
 
-admin2
-password123456
+ID:admin2 PASSWORD:password123456
 
-admin3
-password123456
+ID:admin3 PASSWORD:password123456
 
-admin4
-password123456
+ID:admin4 PASSWORD:password123456
 
-testuser
-testuser123456789
+ID:testuser PASSWORD:testuser123456789
